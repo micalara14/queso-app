@@ -1,0 +1,17 @@
+.navegacion {
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+}
+
+.divLogo {
+	width: 20%;
+}
+
+.divLogo img {
+	width: 100%;
+}
+
+nav button {
+	background-color: red;
+}
