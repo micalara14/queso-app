@@ -5,13 +5,14 @@
 }
 
 .divLogo {
-	width: 20%;
+	width: 15%;
 }
 
 .divLogo img {
 	width: 100%;
 }
 
-nav button {
-	background-color: red;
+.botones-navbar {
+	-webkit-box-shadow: 5px 5px 17px 8px rgba(0, 0, 0, 0.23);
+	box-shadow: 5px 5px 17px 8px rgba(0, 0, 0, 0.23);
 }
