@@ -1,4 +1,5 @@
 import './NavBar.css';
+import CarWidget from '../CarWidget/CarWidget';
 
 import logo from './queso-logo.png';
 
@@ -11,6 +12,7 @@ const NavBar = () => {
 			</div>
 			<button> Inicio </button>
 			<button> Tienda </button>
+			<CarWidget />
 		</nav>
 	);
 };
