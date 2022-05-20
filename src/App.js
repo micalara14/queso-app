@@ -1,7 +1,11 @@
-import logo from './logo.svg';
+//CSS
 import './App.css';
+//Estilos Bootstrap
+import 'bootstrap/dist/css/bootstrap.min.css';
+//Imprt Componentes
 import NavBar from './components/NavBar/NavBar';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
+import ItemCount from './components/ItemCount/ItemCount';
 
 function App() {
 	return (
@@ -9,16 +13,7 @@ function App() {
 			{/* Mi NavBar: */}
 			<NavBar />
 			<ItemListContainer saludo="Hola! Tienda de quesitos" />
-
-			{/* <header className="App-header">
-				<img src={logo} className="App-logo" alt="logo" />
-				<p>
-					Edit <code>src/App.js</code> and save to reload.
-				</p>
-				<a className="App-link" href="https://reactjs.org" target="_blank" rel="noopener noreferrer">
-					Learn React
-				</a>
-			</header> */}
+			<ItemCount />
 		</div>
 	);
 }

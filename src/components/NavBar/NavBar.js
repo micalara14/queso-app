@@ -1,15 +1,11 @@
-// Import de Componentes
-import CarWidget from '../CarWidget/CarWidget';
-// Css
+// CSS
 import './NavBar.css';
+// Bootstrap
+import { Button } from 'react-bootstrap';
 // Import de Logo
 import logo from './queso-logo.png';
-// Estilos Prime React
-import 'primereact/resources/themes/lara-light-indigo/theme.css'; //theme
-import 'primereact/resources/primereact.min.css'; //core css
-import 'primeicons/primeicons.css'; //icons
-// Boton Prime React
-import { Button } from 'primereact/button';
+// Import de Componentes
+import CarWidget from '../CarWidget/CarWidget';
 
 const NavBar = () => {
 	return (
@@ -17,8 +13,12 @@ const NavBar = () => {
 			<div className="divLogo">
 				<img src={logo} />
 			</div>
-			<Button label="Inicio" className="p-button-warning botones-navbar" />
-			<Button label="Tienda" className="p-button-warning botones-navbar" />
+			<Button variant="warning" className="botones-navbar">
+				Inicio
+			</Button>
+			<Button variant="warning" className="botones-navbar">
+				Tienda
+			</Button>
 			<CarWidget />
 		</nav>
 	);

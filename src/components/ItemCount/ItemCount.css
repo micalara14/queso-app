@@ -1,0 +1,12 @@
+.div-contador {
+	display: flex;
+	flex-direction: row;
+}
+
+.div-contador p {
+	margin: 1rem;
+}
+
+.div-contador button {
+	width: 3rem;
+}
