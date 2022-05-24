@@ -1,12 +1,12 @@
-.div-contador {
+.div-counter {
 	display: flex;
 	flex-direction: row;
 }
 
-.div-contador p {
+.div-counter p {
 	margin: 1rem;
 }
 
-.div-contador button {
+.div-counter button {
 	width: 3rem;
 }

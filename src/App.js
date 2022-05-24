@@ -13,7 +13,7 @@ function App() {
 			{/* Mi NavBar: */}
 			<NavBar />
 			<ItemListContainer saludo="Hola! Tienda de quesitos" />
-			<ItemCount />
+			<ItemCount stock={7} />
 		</div>
 	);
 }

@@ -4,29 +4,28 @@ import './ItemCount.css';
 // Bootstrap
 import { Button } from 'react-bootstrap';
 
-const ItemCount = () => {
-	const [ contador, setContador ] = useState(0);
+const ItemCount = (props) => {
+	const [ counter, setCounter ] = useState(0);
 
-	const sumar = () => {
-		// Suponiendo que el stock es de 25 unidades
-		if (contador < 10) {
-			setContador(contador + 1);
+	const addition = () => {
+		if (counter < props.stock) {
+			setCounter(counter + 1);
 		}
 	};
 
-	const restar = () => {
-		if (contador > 0) {
-			setContador(contador - 1);
+	const subtraction = () => {
+		if (counter > 0) {
+			setCounter(counter - 1);
 		}
 	};
 
 	return (
-		<div className="div-contador">
-			<Button variant="warning" className="botones-navbar" onClick={restar}>
+		<div className="div-counter">
+			<Button variant="warning" className="botones-navbar" onClick={subtraction}>
 				-
 			</Button>
-			<p>{contador}</p>
-			<Button variant="warning" className="botones-navbar" onClick={sumar}>
+			<p>{counter}</p>
+			<Button variant="warning" className="botones-navbar" onClick={addition}>
 				+
 			</Button>
 		</div>
