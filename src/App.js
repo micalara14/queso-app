@@ -10,10 +10,8 @@ import ItemCount from './components/ItemCount/ItemCount';
 function App() {
 	return (
 		<div className="App">
-			{/* Mi NavBar: */}
 			<NavBar />
 			<ItemListContainer saludo="Hola! Tienda de quesitos" />
-			<ItemCount />
 		</div>
 	);
 }
