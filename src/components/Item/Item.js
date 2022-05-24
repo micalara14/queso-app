@@ -1,13 +1,18 @@
+//Bootstrap
+import { Col } from 'react-bootstrap';
+//CSS
+import './Item.css';
+//Componentes
 import ItemCount from '../ItemCount/ItemCount';
 
 const Item = ({ id, name, price, img, stock }) => {
 	return (
-		<div key={id}>
+		<Col md={3} key={id} className="item-product">
 			<img src={img} />
-			<p>{name}</p>
-			<p>{price}</p>
+			<h3>{name}</h3>
+			<p>${price}</p>
 			<ItemCount stock={stock} />
-		</div>
+		</Col>
 	);
 };
 

@@ -1,4 +1,10 @@
+//Bootstrap
+import { Container, Row } from 'react-bootstrap';
+//CSS
+import './ItemListContainer.css';
+//UseEffect UseState
 import { useState, useEffect } from 'react';
+//Compopnentes
 import ItemList from '../ItemList/ItemList';
 import { getProducts } from '../../asyncmock';
 
@@ -12,10 +18,12 @@ const ItemListContainer = (props) => {
 	}, []);
 
 	return (
-		<div>
+		<Container>
 			<h1>{props.saludo}</h1>
-			<ItemList products={products} />
-		</div>
+			<Row className="row-products">
+				<ItemList products={products} />
+			</Row>
+		</Container>
 	);
 };
 

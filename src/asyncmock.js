@@ -4,7 +4,7 @@ const products = [
 		name: 'Cheddar',
 		price: 1000,
 		description: 'Queso cheddar marca La Serenísima. Ideal para dips y hamburguesas.',
-		img: 'https://picsum.photos/200/300/?random',
+		img: './images/cheddar.jpg',
 		stock: 9
 	},
 	{
@@ -12,15 +12,15 @@ const products = [
 		name: 'Mozzarella',
 		price: 2000,
 		description: 'Quezo mozarella marca Barraza. Punto de fusión 45ºC.',
-		img: 'https://picsum.photos/200/300/?random',
+		img: './images/mozzarella.jpg',
 		stock: 8
 	},
 	{
 		id: 3,
-		name: 'Provolone',
+		name: 'Roquefort',
 		price: 3000,
-		description: 'Queso provolone marca Santa Rosa. Ideal para asados',
-		img: 'https://picsum.photos/200/300/?random',
+		description: 'Queso provolone marca Papillon. Ideal para darle un toque a cualquier comida',
+		img: './images/roquefort.jpg',
 		stock: 7
 	}
 ];

@@ -12,8 +12,3 @@
 .divLogo img {
 	width: 100%;
 }
-
-.botones-navbar {
-	-webkit-box-shadow: 5px 5px 17px 8px rgba(0, 0, 0, 0.23);
-	box-shadow: 5px 5px 17px 8px rgba(0, 0, 0, 0.23);
-}

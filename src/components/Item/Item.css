@@ -1,0 +1,17 @@
+.item-product {
+	border: solid 0.1px grey;
+	margin: 2rem;
+	padding: 1rem;
+	border-radius: 5%;
+	-webkit-box-shadow: 5px 9px 10px 2px rgba(0, 0, 0, 0.21);
+	box-shadow: 5px 9px 10px 2px rgba(0, 0, 0, 0.21);
+}
+
+.item-product img {
+	width: 100%;
+	border-radius: 5%;
+}
+
+.item-product h3 {
+	font-weight: bold;
+}
