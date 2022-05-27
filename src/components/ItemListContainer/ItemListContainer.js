@@ -4,7 +4,7 @@ import { Container, Row } from 'react-bootstrap';
 import './ItemListContainer.css';
 //UseEffect UseState
 import { useState, useEffect } from 'react';
-//Compopnentes
+//Compopnentes y funciones
 import ItemList from '../ItemList/ItemList';
 import { getProducts } from '../../asyncmock';
 
