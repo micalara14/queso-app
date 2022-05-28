@@ -19,7 +19,7 @@ const products = [
 		id: '3',
 		name: 'Roquefort',
 		price: 3000,
-		description: 'Queso provolone marca Papillon. Ideal para darle un toque a cualquier comida.',
+		description: 'Queso roquefort marca Ille de France. Ideal para darle un toque a cualquier comida.',
 		img: './images/roquefort.jpg',
 		stock: 7
 	},
@@ -43,7 +43,7 @@ const products = [
 		id: '6',
 		name: 'Roquefort',
 		price: 3000,
-		description: 'Queso provolone marca Papillon. Ideal para darle un toque a cualquier comida',
+		description: 'Queso roquefort marca Ille de France. Ideal para darle un toque a cualquier comida',
 		img: './images/roquefort.jpg',
 		stock: 7
 	}
