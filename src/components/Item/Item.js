@@ -1,5 +1,7 @@
 //Bootstrap
 import { Col } from 'react-bootstrap';
+//React dom
+import { Link } from 'react-router-dom';
 //CSS
 import './Item.css';
 //Componentes
@@ -11,6 +13,7 @@ const Item = ({ id, name, price, img, stock }) => {
 			<img src={img} />
 			<h3>{name}</h3>
 			<p>${price}</p>
+			<Link to={`/detail/${id}`}> Ver + </Link>
 			<ItemCount stock={stock} />
 		</Col>
 	);

@@ -12,3 +12,9 @@
 .divLogo img {
 	width: 100%;
 }
+
+.links-navbar {
+	text-decoration: none;
+	color: red;
+	font-weight: bold;
+}

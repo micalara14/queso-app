@@ -57,10 +57,10 @@ export const getProducts = () => {
 	});
 };
 
-export const getProductsById = () => {
+export const getProductsById = (id) => {
 	return new Promise((resolve) => {
 		setTimeout(() => {
-			resolve(products[2]);
+			resolve(products.find((product) => product.id === id));
 		}, 2000);
 	});
 };

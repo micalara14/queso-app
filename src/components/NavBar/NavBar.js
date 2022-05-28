@@ -1,11 +1,14 @@
 // CSS
 import './NavBar.css';
 // Bootstrap
-import { Button } from 'react-bootstrap';
+// import { Button } from 'react-bootstrap';
+//React Router
+import { Link } from 'react-router-dom';
 // Import de Logo
 import logo from './queso-logo.png';
 // Import de Componentes
 import CarWidget from '../CarWidget/CarWidget';
+import { Router } from 'react-router-dom';
 
 const NavBar = () => {
 	return (
@@ -13,12 +16,15 @@ const NavBar = () => {
 			<div className="divLogo">
 				<img src={logo} />
 			</div>
-			<Button variant="warning" className="botones-navbar">
-				Inicio
-			</Button>
-			<Button variant="warning" className="botones-navbar">
-				Tienda
-			</Button>
+			<Link to="./" className="links-navbar">
+				{' '}
+				Inicio{' '}
+			</Link>
+			<Link to="/nacionales" className="links-navbar">
+				{' '}
+				Nacionales{' '}
+			</Link>
+
 			<CarWidget />
 		</nav>
 	);
