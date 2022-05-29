@@ -28,29 +28,29 @@ const products = [
 	},
 	{
 		id: '4',
-		name: 'Cheddar',
+		name: 'Burrata',
 		category: 'nacional',
 		price: 1000,
-		description: 'Queso cheddar marca La Serenísima (nacional). Ideal para dips y hamburguesas.',
-		img: './images/cheddar.jpg',
+		description: 'Queso cheddar marca Arrivata (nacional). Peso: 250gr.',
+		img: './images/burrata.jpg',
 		stock: 9
 	},
 	{
 		id: '5',
-		name: 'Mozzarella',
+		name: 'Reggianito',
 		category: 'nacional',
 		price: 2000,
-		description: 'Quezo mozarella marca Barraza (nacional). Punto de fusión 45ºC.',
-		img: './images/mozzarella.jpg',
+		description: 'Quezo reggianito marca La Paulina (nacional). Ideal para pastas o para gratinar.',
+		img: './images/reggianito.jpg',
 		stock: 8
 	},
 	{
 		id: '6',
-		name: 'Roquefort',
+		name: 'Brie',
 		category: 'importado',
 		price: 3000,
-		description: 'Queso roquefort marca Ille de France (importado). Ideal para darle un toque a cualquier comida',
-		img: './images/roquefort.jpg',
+		description: 'Queso brie marca Wapi (importado). Con 120 días de maduración',
+		img: './images/brie.jpg',
 		stock: 7
 	}
 ];
