@@ -20,9 +20,13 @@ const NavBar = () => {
 				{' '}
 				Inicio{' '}
 			</Link>
-			<Link to="/nacionales" className="links-navbar">
+			<Link to="/category/nacional" className="links-navbar">
 				{' '}
 				Nacionales{' '}
+			</Link>
+			<Link to="/category/importado" className="links-navbar">
+				{' '}
+				Importados{' '}
 			</Link>
 
 			<CarWidget />

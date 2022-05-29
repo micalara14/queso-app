@@ -19,6 +19,10 @@ function App() {
 					<Route path="/" element={<ItemListContainer saludo="Hola! Tienda de quesitos" />} />
 					<Route path="/nacionales" element={<p>hola</p>} />
 					<Route path="detail/:id" element={<ItemDetailContainer />} />
+					<Route
+						path="category/:category"
+						element={<ItemListContainer saludo="Quesos filtrados por categoría" />}
+					/>
 				</Routes>
 			</BrowserRouter>
 		</div>

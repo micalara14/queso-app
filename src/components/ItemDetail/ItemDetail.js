@@ -1,4 +1,7 @@
+//CSS
 import './ItemDetail.css';
+//Componentes
+import ItemCount from '../ItemCount/ItemCount';
 
 const ItemDetail = ({ product }) => {
 	return (
@@ -6,6 +9,7 @@ const ItemDetail = ({ product }) => {
 			<h2>{product.name}</h2>
 			<p>{product.description}</p>
 			<p>${product.price}</p>
+			<ItemCount stock={product.stock} />
 		</div>
 	);
 };

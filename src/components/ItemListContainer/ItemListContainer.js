@@ -2,20 +2,32 @@
 import { Container, Row } from 'react-bootstrap';
 //CSS
 import './ItemListContainer.css';
-//UseEffect UseState
+//useEffect useState useParams
 import { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 //Compopnentes y funciones
 import ItemList from '../ItemList/ItemList';
 import { getProducts } from '../../asyncmock';
+import { getProductByCategory } from '../../asyncmock';
 
 const ItemListContainer = (props) => {
 	const [ products, setProducts ] = useState([]);
+	const { category } = useParams();
 
-	useEffect(() => {
-		getProducts().then((response) => {
-			setProducts(response);
-		});
-	}, []);
+	useEffect(
+		() => {
+			if (!category) {
+				getProducts().then((response) => {
+					setProducts(response);
+				});
+			} else {
+				getProductByCategory(category).then((response) => {
+					setProducts(response);
+				});
+			}
+		},
+		[ category ]
+	);
 
 	return (
 		<Container>
