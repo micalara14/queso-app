@@ -1,6 +1,7 @@
 .item-detail {
 	display: flex;
 	flex-direction: column;
-	border: solid 2px yellow;
+	padding: 1rem;
+	border: solid 3px #ecab0f;
 	margin: 2rem;
 }
