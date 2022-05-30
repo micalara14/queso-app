@@ -5,7 +5,7 @@ const products = [
 		category: 'nacional',
 		price: 1000,
 		description: 'Queso cheddar marca La Serenísima (nacional). Ideal para dips y hamburguesas.',
-		img: './images/cheddar.jpg',
+		img: '/images/cheddar.jpg',
 		stock: 9
 	},
 	{
@@ -14,7 +14,7 @@ const products = [
 		category: 'nacional',
 		price: 2000,
 		description: 'Quezo mozarella marca Barraza (nacional). Punto de fusión 45ºC.',
-		img: './images/mozzarella.jpg',
+		img: '/images/mozzarella.jpg',
 		stock: 8
 	},
 	{
@@ -23,7 +23,7 @@ const products = [
 		category: 'importado',
 		price: 3000,
 		description: 'Queso roquefort marca Ille de France (importado). Ideal para darle un toque a cualquier comida.',
-		img: './images/roquefort.jpg',
+		img: '/images/roquefort.jpg',
 		stock: 7
 	},
 	{
@@ -32,7 +32,7 @@ const products = [
 		category: 'nacional',
 		price: 1000,
 		description: 'Queso cheddar marca Arrivata (nacional). Peso: 250gr.',
-		img: './images/burrata.jpg',
+		img: '/images/burrata.jpg',
 		stock: 9
 	},
 	{
@@ -41,7 +41,7 @@ const products = [
 		category: 'nacional',
 		price: 2000,
 		description: 'Quezo reggianito marca La Paulina (nacional). Ideal para pastas o para gratinar.',
-		img: './images/reggianito.jpg',
+		img: '/images/reggianito.jpg',
 		stock: 8
 	},
 	{
@@ -50,7 +50,7 @@ const products = [
 		category: 'importado',
 		price: 3000,
 		description: 'Queso brie marca Wapi (importado). Con 120 días de maduración',
-		img: './images/brie.jpg',
+		img: '/images/brie.jpg',
 		stock: 7
 	}
 ];
