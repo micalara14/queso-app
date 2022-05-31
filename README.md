@@ -7,7 +7,7 @@ Incluye también un contador de productos limitado por la cantidad de stock de c
 Las librerías usadas son: ReactJs, Create React App, React Router, Sweet Alert y Bootstrap.
 
 Demo:
-![alt text](./public/images/queso-app-demo.gif "Queso app")
+![alt text](./public/images/burrata.jpg "Queso app")
 
 <!-- README POR DEFECTO -->
 # Getting Started with Create React App
