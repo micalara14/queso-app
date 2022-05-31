@@ -7,14 +7,28 @@ import { useParams } from 'react-router-dom';
 
 const ItemDetailContainer = () => {
 	const [ productById, setProductById ] = useState([]);
+	const [ loading, setLoading ] = useState(true);
 
 	const { id } = useParams();
 
 	useEffect(() => {
-		getProductsById(id).then((response) => {
-			setProductById(response);
-		});
+		setLoading(true);
+
+		getProductsById(id)
+			.then((response) => {
+				setProductById(response);
+			})
+			.catch((error) => {
+				console.log(error);
+			})
+			.finally(() => {
+				setLoading(false);
+			});
 	}, []);
+
+	if (loading) {
+		return <h1> Cargando... </h1>;
+	}
 
 	return <ItemDetail product={productById} />;
 };

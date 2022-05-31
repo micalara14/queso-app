@@ -5,7 +5,7 @@ import './ItemCount.css';
 import { Button } from 'react-bootstrap';
 
 const ItemCount = ({ stock }) => {
-	const [ count, setContador ] = useState(0);
+	const [ count, setContador ] = useState(1);
 
 	const addition = () => {
 		if (count < stock) {
@@ -14,7 +14,7 @@ const ItemCount = ({ stock }) => {
 	};
 
 	const subtraction = () => {
-		if (count > 0) {
+		if (count > 1) {
 			setContador(count - 1);
 		}
 	};

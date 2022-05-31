@@ -1,7 +1,12 @@
 .item-detail {
 	display: flex;
 	flex-direction: column;
+	align-items: center;
+	margin: 2rem;
 	padding: 1rem;
 	border: solid 3px #ecab0f;
-	margin: 2rem;
+}
+
+.item-detail img {
+	width: 20%;
 }

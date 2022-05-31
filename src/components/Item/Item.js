@@ -14,7 +14,10 @@ const Item = ({ id, name, price, img, stock }) => {
 			<img src={img} />
 			<h3>{name}</h3>
 			<p>${price}</p>
-			<Link to={`/detail/${id}`}> Ver + </Link>
+			<Link to={`/detail/${id}`}>
+				{' '}
+				<p className="link-ver-mas"> Ver + </p>{' '}
+			</Link>
 			<ItemCount stock={stock} />
 			<ItemAddToCart />
 		</Col>
