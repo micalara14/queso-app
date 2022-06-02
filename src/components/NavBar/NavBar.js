@@ -26,7 +26,7 @@ const NavBar = () => {
 			</Link>
 			<Link to="/category/importado" className="links-navbar">
 				{' '}
-				Importados{' '}
+				Importados {' '}
 			</Link>
 
 			<CarWidget />
