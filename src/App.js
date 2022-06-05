@@ -8,6 +8,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import NavBar from './components/NavBar/NavBar';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
+import ItemCart from './components/ItemCart/ItemCart';
 
 function App() {
 	return (
@@ -23,6 +24,7 @@ function App() {
 						path="category/:category"
 						element={<ItemListContainer saludo="Quesos filtrados por categoría" />}
 					/>
+					<Route path='/cart' element={<ItemCart />} />
 				</Routes>
 			</BrowserRouter>
 		</div>

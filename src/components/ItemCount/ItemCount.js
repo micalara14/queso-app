@@ -4,7 +4,7 @@ import './ItemCount.css';
 // Bootstrap
 import { Button } from 'react-bootstrap';
 
-const ItemCount = ({ stock }) => {
+const ItemCount = ({ stock, onConfirm }) => {
 	const [ count, setContador ] = useState(1);
 
 	const addition = () => {
@@ -20,13 +20,18 @@ const ItemCount = ({ stock }) => {
 	};
 
 	return (
-		<div className="div-count">
-			<Button variant="warning" className="botones-navbar" onClick={subtraction}>
+		<div>
+			<div className="div-count">
+			<Button variant="warning" className='botones-count' onClick={subtraction}>
 				-
 			</Button>
 			<p>{count}</p>
-			<Button variant="warning" className="botones-navbar" onClick={addition}>
+			<Button variant="warning" className='botones-count' onClick={addition}>
 				+
+			</Button>
+			</div>
+			<Button variant="warning" className='botones-count' onClick={() => onConfirm(count)} >
+				Añadir al carrito
 			</Button>
 		</div>
 	);

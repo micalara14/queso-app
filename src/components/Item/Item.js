@@ -5,8 +5,8 @@ import { Link } from 'react-router-dom';
 //CSS
 import './Item.css';
 //Componentes
-import ItemCount from '../ItemCount/ItemCount';
-import ItemAddToCart from '../ItemAddToCart/ItemAddToCart';
+/* import ItemCount from '../ItemCount/ItemCount';
+import ItemAddToCart from '../ItemAddToCart/ItemAddToCart'; */
 
 const Item = ({ id, name, price, img, stock }) => {
 	return (
@@ -18,8 +18,8 @@ const Item = ({ id, name, price, img, stock }) => {
 				{' '}
 				<p className="link-ver-mas"> Ver + </p>{' '}
 			</Link>
-			<ItemCount stock={stock} />
-			<ItemAddToCart />
+			{/* <ItemCount stock={stock} />
+			<ItemAddToCart /> */}
 		</Col>
 	);
 };
