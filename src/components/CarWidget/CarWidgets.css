@@ -1,6 +1,12 @@
 .div-cart {
-	width: 5%;
+	width: 15%;
 }
 .div-cart img {
 	width: 100%;
+}
+
+.link-carrito{
+	text-decoration: none;
+	color: #d83e3c;
+	font-weight: bold;
 }

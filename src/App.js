@@ -9,13 +9,14 @@ import NavBar from './components/NavBar/NavBar';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
 import ItemCart from './components/ItemCart/ItemCart';
+import {CartContextProvider} from "./context/CarContext"
 
 function App() {
 	return (
 		<div className="App">
+			<CartContextProvider>
 			<BrowserRouter>
 				<NavBar />
-				{/* <ItemDetailContainer /> */}
 				<Routes>
 					<Route path="/" element={<ItemListContainer saludo="Hola! Tienda de quesitos" />} />
 					<Route path="/nacionales" element={<p>hola</p>} />
@@ -27,6 +28,7 @@ function App() {
 					<Route path='/cart' element={<ItemCart />} />
 				</Routes>
 			</BrowserRouter>
+			</CartContextProvider>
 		</div>
 	);
 }

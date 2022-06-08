@@ -4,8 +4,8 @@ import './ItemCount.css';
 // Bootstrap
 import { Button } from 'react-bootstrap';
 
-const ItemCount = ({ stock, onConfirm }) => {
-	const [ count, setContador ] = useState(1);
+const ItemCount = ({ stock, initial=1, onConfirm }) => {
+	const [ count, setContador ] = useState(initial);
 
 	const addition = () => {
 		if (count < stock) {

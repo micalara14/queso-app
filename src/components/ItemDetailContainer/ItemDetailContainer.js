@@ -30,7 +30,7 @@ const ItemDetailContainer = () => {
 		return <h1> Cargando... </h1>;
 	}
 
-	return <ItemDetail product={productById} />;
+	return <ItemDetail {...productById} />;
 };
 
 export default ItemDetailContainer;
