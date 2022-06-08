@@ -1,0 +1,9 @@
+.item-cart div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 3rem;
+    color: #d83e3c;
+    font-weight: bold;
+}

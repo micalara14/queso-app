@@ -1,0 +1,25 @@
+.navegacion {
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	height: 8rem;
+	margin-top: 1rem;
+}
+
+.divLogo {
+	width: 15%;
+}
+
+.divLogo img {
+	width: 100%;
+}
+
+.links-navbar {
+	text-decoration: none;
+	color: #d83e3c;
+	font-weight: bold;
+}
+
+.links-navbar:hover {
+	color: #fec107;
+}

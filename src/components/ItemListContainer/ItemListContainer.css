@@ -1,0 +1,9 @@
+.row-products {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.titulo-pagina {
+	color: #d83e3c;
+}

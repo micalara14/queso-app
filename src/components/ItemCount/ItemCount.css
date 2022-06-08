@@ -1,0 +1,18 @@
+.div-count {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+}
+
+.div-count p {
+	margin: 1rem;
+}
+
+.div-count button {
+	width: 3rem;
+}
+
+.botones-count{
+	margin: 0.3rem;
+}
