@@ -7,8 +7,11 @@ import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 //Compopnentes y funciones
 import ItemList from '../ItemList/ItemList';
-import { getProducts } from '../../asyncmock';
-import { getProductByCategory } from '../../asyncmock';
+/* import { getProducts } from '../../asyncmock';
+import { getProductByCategory } from '../../asyncmock'; */
+
+import {getDocs, collection} from "firebase/firestore"
+import { db } from '../../services/firebase';
 
 const ItemListContainer = (props) => {
 	const [ products, setProducts ] = useState([]);
@@ -19,7 +22,11 @@ const ItemListContainer = (props) => {
 		() => {
 			setLoading(true);
 
-			if (!category) {
+			getDocs(collection(db, "productos")).then(response => {
+				console.log(response)
+			})
+
+/* 		if (!category) {
 				getProducts()
 					.then((response) => {
 						setProducts(response);
@@ -41,7 +48,7 @@ const ItemListContainer = (props) => {
 					.finally(() => {
 						setLoading(false);
 					});
-			}
+			}  */
 		},
 		[ category ]
 	);
