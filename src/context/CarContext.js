@@ -1,5 +1,5 @@
 //Use State y Context
-import { useState, createContext } from "react";
+import { useState, createContext, useEffect } from "react";
 
 
 const CartContext = createContext()
