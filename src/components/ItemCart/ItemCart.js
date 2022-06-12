@@ -4,6 +4,8 @@ import { Link } from "react-router-dom"
 import CartContext from "../../context/CarContext"
 //CSS
 import './ItemCart.css'
+// Bootstrap
+import { Button } from 'react-bootstrap';
 
 
 
@@ -17,10 +19,10 @@ const ItemCart = () => {
     return (
         <div>
         <div className="item-cart">
-            {cart.length < 1 ? <div> <p>No hay productos en el carrito</p> <Link to="/"> Vovler a la tienda </Link> </div> : <p>Carrito de compras</p>}
-            {cart.map(prod => <div key={prod.id}> <p>{prod.name}</p> <p>Cantidad: {prod.quantity}</p> <p>Subtotal: ${prod.quantity*prod.price}</p> <button  onClick={() => removeItem(prod.id)}>X</button> </div>)}
+            {cart.length < 1 ? <div className="carrito-vacio" > <p className="titulo-carrito" >No hay productos en el carrito</p> <Link to="/"> Vovler a la tienda </Link> </div> : <p className="titulo-carrito" >Carrito de compras</p>}
+            {cart.map(prod => <div key={prod.id}> <p>{prod.name}</p> <p>Cantidad: {prod.quantity}</p> <p>Subtotal: ${prod.quantity*prod.price}</p>  <Button onClick={() => removeItem(prod.id)} variant="warning"> X </Button> </div>)}
         </div>
-            {cart.length > 0 ?  <div> <p>Total: ${total}</p> <button onClick={() => deleteAll()}>Vaciar carrito</button> </div> : null}
+            {cart.length > 0 ?  <div> <p className="total-compra" >Total de su compra: ${total}</p> <Button onClick={() => deleteAll()} variant="warning"> Vaciar carrito </Button> </div> : null}
         </div>
         
         
