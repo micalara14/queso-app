@@ -20,7 +20,7 @@ const ItemCart = () => {
             {cart.length < 1 ? <div> <p>No hay productos en el carrito</p> <Link to="/"> Vovler a la tienda </Link> </div> : <p>Carrito de compras</p>}
             {cart.map(prod => <div key={prod.id}> <p>{prod.name}</p> <p>Cantidad: {prod.quantity}</p> <p>Subtotal: ${prod.quantity*prod.price}</p> <button  onClick={() => removeItem(prod.id)}>X</button> </div>)}
         </div>
-            {cart.length > 0 ?  <div> <p>Total: ${total}</p> <button onClick={() => deleteAll()}>Vaciar carrito</button> </div> : null}
+            {cart.length > 0 ?  <div> <p>Total de su compra: ${total}</p> <button onClick={() => deleteAll()}>Vaciar carrito</button> </div> : null}
         </div>
         
         
