@@ -21,7 +21,6 @@ const ItemDetail = ({ id, name, img, description, price, stock }) => {
 
 		addItem({id, name, price, quantity})
 	}
-	console.log(quantity)
 
 	return (
 		<div className="item-detail">

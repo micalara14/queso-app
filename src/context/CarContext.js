@@ -1,5 +1,5 @@
 //Use State y Context
-import { useState, createContext } from "react";
+import { useState, createContext, useEffect } from "react";
 
 
 const CartContext = createContext()
@@ -43,8 +43,17 @@ export const CartContextProvider = ({ children }) => {
         return cart.find(prod => prod.id === id)
     }
 
+    const removeItem = (id) => {
+        const products = cart.filter(prod => prod.id !== id )
+        setCart(products)
+    }
+
+    const deleteAll = () => {
+        setCart([])
+    }
+
     return(
-        <CartContext.Provider value={{cart, addItem, getQuantity, getProduct}}>
+        <CartContext.Provider value={{cart, addItem, getQuantity, getProduct, removeItem, deleteAll}}>
             {children}
         </CartContext.Provider>
     )
