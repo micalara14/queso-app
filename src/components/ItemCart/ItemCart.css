@@ -1,9 +1,27 @@
+.titulo-carrito {
+    font-size: x-large;
+    font-weight: bold;
+    color: #d83e3c;
+    background-color: #ecab0f;
+}
+
+.carrito-vacio {
+    display: flex;
+    flex-direction: column !important;
+}
+
 .item-cart div {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
     margin-top: 3rem;
+    color: #d83e3c;
+    font-weight: bold;
+}
+
+.total-compra {
+    font-size: larger;
     color: #d83e3c;
     font-weight: bold;
 }
