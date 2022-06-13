@@ -10,7 +10,7 @@ import ItemList from '../ItemList/ItemList';
 /* import { getProducts } from '../../asyncmock';
 import { getProductByCategory } from '../../asyncmock'; */
 
-import {getDocs, collection} from "firebase/firestore"
+import {getDocs, collection, query, where} from "firebase/firestore"
 import { db } from '../../services/firebase';
 
 const ItemListContainer = (props) => {
@@ -22,8 +22,19 @@ const ItemListContainer = (props) => {
 		() => {
 			setLoading(true);
 
-			getDocs(collection(db, "productos")).then(response => {
-				console.log(response)
+			const collectionRef = category
+			? query(collection(db, "productos"), where("category", "==", category))
+			: collection(db, "productos")
+
+			getDocs(collectionRef).then(response => {
+				const products = response.docs.map (doc => {
+					return {id: doc.id, ...doc.data()}
+				})
+				setProducts(products)
+			}).catch(error => {
+				console.log(error)
+			}).finally(() => {
+				setLoading(false)
 			})
 
 /* 		if (!category) {

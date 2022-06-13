@@ -4,6 +4,9 @@ import ItemDetail from '../ItemDetail/ItemDetail';
 import { getProductsById } from '../../asyncmock';
 //React dom
 import { useParams } from 'react-router-dom';
+//Firebase
+import { getDoc, doc } from 'firebase/firestore';
+import { db } from '../../services/firebase';
 
 const ItemDetailContainer = () => {
 	const [ productById, setProductById ] = useState([]);
@@ -14,7 +17,18 @@ const ItemDetailContainer = () => {
 	useEffect(() => {
 		setLoading(true);
 
-		getProductsById(id)
+
+		getDoc(doc(db, "productos", id)).then(response => {
+			console.log(response)
+			const product = {id: response.id, ...response.data()}
+			setProductById(product)
+		}).catch(error => {
+			console.log(error)
+		}).finally(() => {
+			setLoading(false)
+		})
+
+/* 		getProductsById(id)
 			.then((response) => {
 				setProductById(response);
 			})
@@ -23,8 +37,8 @@ const ItemDetailContainer = () => {
 			})
 			.finally(() => {
 				setLoading(false);
-			});
-	}, []);
+			}); */
+	}, [id]);
 
 	if (loading) {
 		return <h1> Cargando... </h1>;
