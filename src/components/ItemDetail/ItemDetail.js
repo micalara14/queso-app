@@ -28,7 +28,7 @@ const ItemDetail = ({ id, name, img, description, price, stock }) => {
 			<img src={img} className="img-detail" />
 			<p>{description}</p>
 			<p>${price}</p>
-			{quantity > 0 ? <Link to="/cart"> Finalizar compra </Link> : <ItemCount onConfirm={onAdd} stock={stock} initial={getProduct(id)?.quantity}/>}
+			{quantity > 0 ? <Link to="/cart"> Finalizar compra </Link> : <ItemCount onConfirm={onAdd} stock={stock}/>}
 		</div>
 	);
 };

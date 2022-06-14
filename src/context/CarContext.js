@@ -14,11 +14,20 @@ export const CartContextProvider = ({ children }) => {
         } else {
             const newCart = cart.map(prod => {
                 if(prod.id === productToAdd.id) {
-                    const newProduct = {
-                        ...prod,
-                        quantity: productToAdd.quantity
+                    let newQuantity = prod.quantity + productToAdd.quantity;
+                    let newProd;
+                    if (newQuantity >= productToAdd.stock){
+                        newProd = {
+                            ...prod,
+                            quantity: productToAdd.stock
+                        };
+                    }else{
+                        newProd = {
+                            ...prod,
+                            quantity: newQuantity,
+                        }
                     }
-                    return newProduct
+                    return newProd
                 } else {
                 return prod 
                 }
