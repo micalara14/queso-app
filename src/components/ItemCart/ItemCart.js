@@ -6,15 +6,35 @@ import CartContext from "../../context/CarContext"
 import './ItemCart.css'
 // Bootstrap
 import { Button } from 'react-bootstrap';
-
+//Firestore
+import { addDoc, collection} from "firebase/firestore"
+import { db } from '../../services/firebase';
 
 
 const ItemCart = () => {
 
     const {cart, removeItem, deleteAll, getTotal} = useContext(CartContext)
-
     const total = getTotal()
 
+    const createOrder = () => {
+        const order = {
+            buyer: {
+                name: "Nombre Provisorio",
+                email: "provisorio@gmail.com",
+                phone: 1234,
+                adress: "Dirección provisoria",
+                comment: "Comentatios"
+            },
+            items: cart,
+            total: getTotal()
+        }
+        const collectionRef = collection(db, "orders")
+
+        addDoc(collectionRef, order).then(({id}) => {
+        alert(`Se creo la orden con el id ${id}`)
+        console.log(`Se creo la orden con el id ${id}`)
+        })
+    }
 
     return (
         <div>
@@ -22,7 +42,7 @@ const ItemCart = () => {
             {cart.length < 1 ? <div className="carrito-vacio" > <p className="titulo-carrito" >No hay productos en el carrito</p> <Link to="/"> Vovler a la tienda </Link> </div> : <p className="titulo-carrito" >Carrito de compras</p>}
             {cart.map(prod => <div key={prod.id}> <p>{prod.name}</p> <p>Cantidad: {prod.quantity}</p> <p>Subtotal: ${prod.quantity*prod.price}</p>  <Button onClick={() => removeItem(prod.id)} variant="warning"> X </Button> </div>)}
         </div>
-            {cart.length > 0 ?  <div> <p className="total-compra" >Total de su compra: ${total}</p> <Button onClick={() => deleteAll()} variant="warning"> Vaciar carrito </Button> </div> : null}
+            {cart.length > 0 ?  <div> <p className="total-compra" >Total de su compra: ${total}</p> <Button onClick={() => deleteAll()} variant="warning"> Vaciar carrito </Button> <Button onClick={createOrder} variant="warning"> Crear orden </Button> <p> </p> </div> : null}
         </div>
         
         
