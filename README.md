@@ -1,15 +1,31 @@
-<!-- MI README -->
-Queso es una app que simula el funcionamiento de una tienda de quesos.
+<!-- QUESO APP -->
+DESCRIPCIÓN------------------------------
+Queso es una app que simula el funcionamiento de una tienda de quesos. Es un E-Commerce realizado con React.
 
 Los quesos pueden ser nacionales o importados, y los links que están en el navbar los filtran por esas categorías. A su vez, al hacer click en “ver +” se puede ver la descripción completa del producto seleccionado. Tiene navegabilidad, se puede volver para atrás.
-Incluye también un contador de productos limitado por la cantidad de stock de cada producto y un botón de “comprar” que muestra una alerta en pantalla.
+Incluye también un contador de productos limitado por la cantidad de stock de cada producto y un botón de “comprar” que agrega el/los productos al carrito y devuelve un link para ir al mismo.
+En el carrito se pueden ver los detalles de los productos seleccionados. Cuenta con un botón para vaciar el carrito, un botón por producto para eliminarlo y un formulario que al llenarlo da la opción de finalizar la compra. Al finalizarla, una alerta lo confirma indicando el ID de la compra.
+Si el carrito está vacio, te invita al inicio.
 
-Las librerías usadas son: ReactJs, Create React App, React Router, Sweet Alert y Bootstrap.
+Las librerías usadas son: ReactJs, Create React App, React Router, Sweet Alert y Bootstrap. Usa también Firebase para los productos.
 
-Demo:
+COMPONENTES PRINCIPALES-----------------
+- CarWidget
+- Item
+- ItemCart
+- ItemDetail
+- ItemDetailContainer
+- ItemForm
+- ItemList
+- ItemListContainer
+- Navbar
+
+DEMOSTRACION----------------------------
 ![alt text](./public/images/queso-app-demo.gif "Queso app")
 
-<!-- README POR DEFECTO -->
+By: Micaela Lara Mendoza
+
+<!-- COMANDOS -->
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

@@ -1,4 +1,4 @@
-// Bootstrap
+/* // Bootstrap
 import { Button } from 'react-bootstrap';
 //Sweet alert
 import swal from 'sweetalert';
@@ -18,3 +18,4 @@ const ItemAddToCart = () => {
 };
 
 export default ItemAddToCart;
+ */

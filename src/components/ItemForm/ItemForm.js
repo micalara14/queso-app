@@ -47,7 +47,7 @@ const ItemForm = () => {
             <label for="name">Ingrese su nombre</label>
             <input id="name" value={buyer.name} placeholder="Nombre" onChange={(e) => setBuyer({...buyer, name: e.target.value})} />
             <label for="email">Ingrese su email</label>
-            <input id="email" value={buyer.email} placeholder="Email" onChange={(e) => setBuyer({...buyer, email: e.target.value})} />
+            <input id="email" value={buyer.email} type="email" placeholder="Email" onChange={(e) => setBuyer({...buyer, email: e.target.value})} />
             <label for="phone">Ingrese su teléfono</label>
             <input id="phone" value={buyer.phone} type="number" placeholder="Teléfono" onChange={(e) => setBuyer({...buyer, phone: e.target.value})} />
             <label for="adress">Ingrese su dirección completa</label>

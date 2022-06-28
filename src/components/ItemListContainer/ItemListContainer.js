@@ -1,5 +1,6 @@
 //Bootstrap
 import { Container, Row } from 'react-bootstrap';
+import { Spinner } from 'react-bootstrap';
 //CSS
 import './ItemListContainer.css';
 //useEffect useState useParams
@@ -7,9 +8,7 @@ import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 //Compopnentes y funciones
 import ItemList from '../ItemList/ItemList';
-/* import { getProducts } from '../../asyncmock';
-import { getProductByCategory } from '../../asyncmock'; */
-
+//Firebase
 import {getDocs, collection, query, where} from "firebase/firestore"
 import { db } from '../../services/firebase';
 
@@ -36,36 +35,12 @@ const ItemListContainer = (props) => {
 			}).finally(() => {
 				setLoading(false)
 			})
-
-/* 		if (!category) {
-				getProducts()
-					.then((response) => {
-						setProducts(response);
-					})
-					.catch((error) => {
-						console.log(error);
-					})
-					.finally(() => {
-						setLoading(false);
-					});
-			} else {
-				getProductByCategory(category)
-					.then((response) => {
-						setProducts(response);
-					})
-					.catch((error) => {
-						console.log(error);
-					})
-					.finally(() => {
-						setLoading(false);
-					});
-			}  */
 		},
 		[ category ]
 	);
 
 	if (loading) {
-		return <h1> Cargando... </h1>;
+		return <Spinner animation="border" variant="warning" />;
 	}
 
 	return (

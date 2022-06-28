@@ -1,9 +1,10 @@
 //UseEffect UseState
 import { useState, useEffect } from 'react';
 import ItemDetail from '../ItemDetail/ItemDetail';
-import { getProductsById } from '../../asyncmock';
 //React dom
 import { useParams } from 'react-router-dom';
+//Bootstrap
+import { Spinner } from 'react-bootstrap';
 //Firebase
 import { getDoc, doc } from 'firebase/firestore';
 import { db } from '../../services/firebase';
@@ -26,21 +27,10 @@ const ItemDetailContainer = () => {
 		}).finally(() => {
 			setLoading(false)
 		})
-
-/* 		getProductsById(id)
-			.then((response) => {
-				setProductById(response);
-			})
-			.catch((error) => {
-				console.log(error);
-			})
-			.finally(() => {
-				setLoading(false);
-			}); */
 	}, [id]);
 
 	if (loading) {
-		return <h1> Cargando... </h1>;
+		return <Spinner animation="border" variant="warning" />;
 	}
 
 	return <ItemDetail {...productById} />;
