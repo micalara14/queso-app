@@ -1,0 +1,32 @@
+.div-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h3{
+    margin-top: 6rem;
+    color: #d83e3c;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem;
+    padding: 1rem;
+    width: 50%;
+
+    border: 2px solid #fec107;
+    border-radius: 10px;
+}
+
+form input {
+    width: 65%;
+}
+
+.btn-comprar{
+    margin: 2rem;
+}
