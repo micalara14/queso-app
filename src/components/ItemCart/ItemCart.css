@@ -15,10 +15,17 @@
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    align-items: center;
-    margin-top: 3rem;
     color: #d83e3c;
     font-weight: bold;
+    margin: 0rem 2rem 2rem 2rem;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.item-cart div p {
+    padding: 1rem;
+    margin: 0px;
 }
 
 .total-compra {

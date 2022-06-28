@@ -7,7 +7,7 @@ import './Item.css';
 //Componentes
 
 
-const Item = ({ id, name, price, img, stock }) => {
+const Item = ({ id, name, price, img }) => {
 	return (
 		<Col md={3} key={id} className="item-product">
 			<img src={img} />
