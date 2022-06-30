@@ -18,12 +18,12 @@ function App() {
 			<BrowserRouter>
 				<NavBar />
 				<Routes>
-					<Route path="/" element={<ItemListContainer saludo="Hola! Tienda de quesitos" />} />
+					<Route path="/" element={<ItemListContainer saludo="Villa Quesería: Tienda de quesos" />} />
 					<Route path="/nacionales" element={<p>hola</p>} />
 					<Route path="detail/:id" element={<ItemDetailContainer />} />
 					<Route
 						path="category/:category"
-						element={<ItemListContainer saludo="Quesos filtrados por categoría" />}
+						element={<ItemListContainer saludo="Villa Quesería: Tienda de quesos - Filtrados por categoría" />}
 					/>
 					<Route path='/cart' element={<ItemCart />} />
 				</Routes>

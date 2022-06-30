@@ -4,6 +4,7 @@
 	justify-content: space-around;
 	height: 8rem;
 	margin-top: 1rem;
+	margin-bottom: 2rem;
 }
 
 .divLogo {
@@ -11,13 +12,15 @@
 }
 
 .divLogo img {
-	width: 100%;
+	width: 70%;
+	border-radius: 50%;
 }
 
 .links-navbar {
 	text-decoration: none;
 	color: #d83e3c;
 	font-weight: bold;
+	font-size: x-large;
 }
 
 .links-navbar:hover {

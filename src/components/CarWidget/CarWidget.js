@@ -1,4 +1,4 @@
-// Css
+// CSS
 import './CarWidgets.css';
 //React Router
 import { Link } from 'react-router-dom';
@@ -15,11 +15,6 @@ const cartCount = getQuantity()
 		<div>{cart.length > 0 
 			? <Link to="/cart" className='link-carrito'> <div className="div-cart"> <img src="/images/shp-cart.jpg" alt="carrito de compas" /> <p> {cartCount} </p> </div> </Link> 
 		: null}</div>
-
-		
-		
-
-
 	);
 };
 

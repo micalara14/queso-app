@@ -1,6 +1,5 @@
-//Use State y Context
+//useState y Context
 import { useState, createContext } from "react";
-
 
 const CartContext = createContext()
 
@@ -8,7 +7,6 @@ export const CartContextProvider = ({ children }) => {
     const [cart, setCart] = useState([])
 
     const addItem = (productToAdd) => {
-
         if(!isInCart(productToAdd.id)) {
             setCart([...cart, productToAdd])
         } else {

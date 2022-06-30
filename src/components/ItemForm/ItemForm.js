@@ -39,7 +39,6 @@ const ItemForm = () => {
         
     }
 
-
     return (
         <div className='div-form'>
             <h3>Complete el formulario para finalizar la compra:</h3>
@@ -54,13 +53,10 @@ const ItemForm = () => {
             <input id="adress" value={buyer.adress} placeholder="Dirección" onChange={(e) => setBuyer({...buyer, adress: e.target.value})} />
             <label for="comment">Comentarios o notas a tener en cuenta</label>
             <input id="comment" value={buyer.comment} placeholder="Comentarios" onChange={(e) => setBuyer({...buyer, comment: e.target.value})} />
-
             </form>
             {buyer.name != "" && buyer.email != "" && buyer.phone != "" && buyer.adress != "" && buyer.comment != "" ? <Button className="btn-comprar" onClick={createOrder} variant="warning"> Crear orden </Button> : null}
-            
         </div>
     )
-
 }
 
 export default ItemForm

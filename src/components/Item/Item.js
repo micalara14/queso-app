@@ -4,7 +4,6 @@ import { Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 //CSS
 import './Item.css';
-//Componentes
 
 
 const Item = ({ id, name, price, img }) => {
@@ -13,9 +12,9 @@ const Item = ({ id, name, price, img }) => {
 			<img src={img} />
 			<h3>{name}</h3>
 			<p>${price}</p>
-			<Link to={`/detail/${id}`}>
+			<Link className="link-ver-mas" to={`/detail/${id}`}>
 				{' '}
-				<p className="link-ver-mas"> Ver + </p>{' '}
+				<p className="link-ver-mas-p"> Ver + </p>{' '}
 			</Link>
 		</Col>
 	);

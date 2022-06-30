@@ -7,8 +7,6 @@ import CartContext from '../../context/CarContext';
 import { Link } from 'react-router-dom'
 //Componentes
 import ItemCount from '../ItemCount/ItemCount';
-/* import ItemAddToCart from '../ItemAddToCart/ItemAddToCart'; */
-
 
 const ItemDetail = ({ id, name, img, description, price, stock }) => {
 
@@ -18,7 +16,6 @@ const ItemDetail = ({ id, name, img, description, price, stock }) => {
 
 	const onAdd = (quantity) => {
 		setQuantity(quantity)
-
 		addItem({id, name, price, quantity})
 	}
 

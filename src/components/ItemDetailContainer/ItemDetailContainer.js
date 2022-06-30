@@ -1,4 +1,4 @@
-//UseEffect UseState
+//useEffect useState
 import { useState, useEffect } from 'react';
 import ItemDetail from '../ItemDetail/ItemDetail';
 //React dom
@@ -17,7 +17,6 @@ const ItemDetailContainer = () => {
 
 	useEffect(() => {
 		setLoading(true);
-
 
 		getDoc(doc(db, "productos", id)).then(response => {
 			const product = {id: response.id, ...response.data()}

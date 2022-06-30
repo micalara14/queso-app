@@ -7,12 +7,10 @@ import './ItemCart.css'
 // Bootstrap
 import { Button } from 'react-bootstrap';
 import { Card } from 'react-bootstrap';
-
-//Components
+//Componentes
 import ItemForm from "../ItemForm/ItemForm";
 
 const ItemCart = () => {
-
     const {cart, removeItem, deleteAll, getTotal} = useContext(CartContext)
     const total = getTotal()
 
@@ -24,8 +22,6 @@ const ItemCart = () => {
         </div>
             {cart.length > 0 ?  <div> <p className="total-compra" >Total de su compra: ${total}</p> <Button onClick={() => deleteAll()} variant="warning"> Vaciar carrito </Button> <ItemForm/> </div> : null}
         </div>
-        
-        
     )
 }
 

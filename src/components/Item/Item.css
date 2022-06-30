@@ -17,7 +17,19 @@
 }
 
 .link-ver-mas {
-	background-color: #fec107;
+	text-decoration: none;
+}
+
+.link-ver-mas p {
 	border-radius: 3px;
-	color: black;
+	padding: 0.5rem;
+	font-weight: bold;
+	background-color: #fec107;
+	color: #d83e3c;	
+}
+
+.link-ver-mas p:hover{
+	box-shadow: 7px 8px 5px 0px rgba(216,62,60,0.34);
+	-webkit-box-shadow: 7px 8px 5px 0px rgba(216,62,60,0.34);
+	-moz-box-shadow: 7px 8px 5px 0px rgba(216,62,60,0.34);
 }
