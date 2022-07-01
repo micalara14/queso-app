@@ -7,6 +7,38 @@
 	border: solid 3px #ecab0f;
 }
 
-.item-detail img {
+.item-detail h2{
+	font-weight: bold;
+	color: #d83e3c;
+}
+
+.item-detail p{
+	color: #d83e3c;
+	padding: 0.5rem;
+}
+
+.precio-item{
+	font-weight: bold;
+	color: #d83e3c;
+}
+
+.img-detail {
 	width: 20%;
+	border-radius: 5px;
+	border: solid #fec107;
+}
+
+.link-finalizar-compra{
+	background-color: #fec107;
+	color: #d83e3c;
+	padding: 1rem;
+	border-radius: 3px;
+	text-decoration: none;
+}
+
+.link-finalizar-compra:hover{
+	box-shadow: 7px 8px 5px 0px rgba(216,62,60,0.34);
+	-webkit-box-shadow: 7px 8px 5px 0px rgba(216,62,60,0.34);
+	-moz-box-shadow: 7px 8px 5px 0px rgba(216,62,60,0.34);
+	color: #d83e3c;
 }

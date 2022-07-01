@@ -16,6 +16,11 @@
 	font-weight: bold;
 }
 
+.precio-item{
+	font-weight: bold;
+	color: #d83e3c;	
+}
+
 .link-ver-mas {
 	text-decoration: none;
 }

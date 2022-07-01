@@ -11,7 +11,7 @@ const Item = ({ id, name, price, img }) => {
 		<Col md={3} key={id} className="item-product">
 			<img src={img} />
 			<h3>{name}</h3>
-			<p>${price}</p>
+			<p className='precio-item'>${price}</p>
 			<Link className="link-ver-mas" to={`/detail/${id}`}>
 				{' '}
 				<p className="link-ver-mas-p"> Ver + </p>{' '}
