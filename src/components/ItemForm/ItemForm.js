@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { useContext } from "react"
 import CartContext from "../../context/CarContext"
 //Firestore
-import { addDoc, collection} from "firebase/firestore"
+import { addDoc, collection, updateDoc, doc, getDocs, query, where, documentId, writeBatch} from "firebase/firestore"
 import { db } from '../../services/firebase';
 // Bootstrap
 import { Button } from 'react-bootstrap';
@@ -23,6 +23,10 @@ const ItemForm = () => {
 
     const {cart, getTotal} = useContext(CartContext)
     const total = getTotal()
+    const ids = cart.map(prod => prod.id)
+    const collectionRefProd = collection(db, 'productos')
+    const batch = writeBatch(db)
+    const outOfStock = []
 
     const createOrder = () => {
         const order = {
@@ -30,14 +34,34 @@ const ItemForm = () => {
             items: cart,
             total: getTotal()
         }
-        const collectionRef = collection(db, "orders")
 
-        addDoc(collectionRef, order).then(({id}) => {
-        swal(`Se creo la orden con el id ${id}.
-        Gracias por su compra! Nos pondremos en contacto.`)
+        getDocs(query(collectionRefProd, where(documentId(), 'in', ids)))
+        .then(response => {
+            response.docs.forEach(doc => {
+                const dataDoc = doc.data()
+                const prodQuantity = cart.find(prod => prod.id === doc.id)?.quantity
+
+                if(dataDoc.stock >= prodQuantity) {
+                    batch.update(doc.ref, { stock: dataDoc.stock - prodQuantity})
+                } else {
+                    outOfStock.push({ id: doc.id, ...dataDoc})
+                }
+            })
+        }).then(() => {
+            if(outOfStock.length === 0) {
+                const collectionOrder = collection(db, 'orders')
+                return addDoc(collectionOrder, order)
+            } else {
+                return Promise.reject({ type: 'out_of_stock', products: outOfStock})
+            }
+        }).then(({ id }) => {
+            batch.commit()
+            swal('Gracias por su compra!',`El id de la orden es: ${id}. Nos comunicaremos con usted.`)
+        }).catch(error => {
+            console.log(error)
+            swal('Error',`Algunos productos estan fuera de stock`)
         })
-        
-    }
+}
 
     return (
         <div className='div-form'>
