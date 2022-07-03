@@ -18,7 +18,6 @@ const ItemListContainer = (props) => {
 	useEffect(
 		() => {
 			setLoading(true);
-
 			getProducts(category).then(response => {
 				setProducts(response)
 			}).catch(error => {

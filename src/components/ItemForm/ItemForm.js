@@ -3,14 +3,16 @@ import { useState } from 'react';
 import { useContext } from "react"
 import CartContext from "../../context/CarContext"
 //Firestore
-import { addDoc, collection, updateDoc, doc, getDocs, query, where, documentId, writeBatch} from "firebase/firestore"
-import { db } from '../../services/firebase';
+/* import { addDoc, collection, updateDoc, doc, getDocs, query, where, documentId, writeBatch} from "firebase/firestore"
+import { db } from '../../services/firebase'; */
 // Bootstrap
 import { Button } from 'react-bootstrap';
 //CSS
 import "./ItemForm.css"
 //Sweet Alert
-import swal from 'sweetalert';
+/* import swal from 'sweetalert';
+ *///Funcioness
+import { setOrders } from '../../services/firebase/firestore';
 
 const ItemForm = () => {
     const [buyer, setBuyer] = useState({
@@ -23,10 +25,7 @@ const ItemForm = () => {
 
     const {cart, getTotal} = useContext(CartContext)
     const total = getTotal()
-    const ids = cart.map(prod => prod.id)
-    const collectionRefProd = collection(db, 'productos')
-    const batch = writeBatch(db)
-    const outOfStock = []
+    
 
     const createOrder = () => {
         const order = {
@@ -35,32 +34,7 @@ const ItemForm = () => {
             total: getTotal()
         }
 
-        getDocs(query(collectionRefProd, where(documentId(), 'in', ids)))
-        .then(response => {
-            response.docs.forEach(doc => {
-                const dataDoc = doc.data()
-                const prodQuantity = cart.find(prod => prod.id === doc.id)?.quantity
-
-                if(dataDoc.stock >= prodQuantity) {
-                    batch.update(doc.ref, { stock: dataDoc.stock - prodQuantity})
-                } else {
-                    outOfStock.push({ id: doc.id, ...dataDoc})
-                }
-            })
-        }).then(() => {
-            if(outOfStock.length === 0) {
-                const collectionOrder = collection(db, 'orders')
-                return addDoc(collectionOrder, order)
-            } else {
-                return Promise.reject({ type: 'out_of_stock', products: outOfStock})
-            }
-        }).then(({ id }) => {
-            batch.commit()
-            swal('Gracias por su compra!',`El id de la orden es: ${id}. Nos comunicaremos con usted.`)
-        }).catch(error => {
-            console.log(error)
-            swal('Error',`Algunos productos estan fuera de stock`)
-        })
+        setOrders(cart, order)
 }
 
     return (
