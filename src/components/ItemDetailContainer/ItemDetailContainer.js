@@ -6,8 +6,9 @@ import { useParams } from 'react-router-dom';
 //Bootstrap
 import { Spinner } from 'react-bootstrap';
 //Firebase
-import { getDoc, doc } from 'firebase/firestore';
-import { db } from '../../services/firebase';
+/* import { getDoc, doc } from 'firebase/firestore';
+import { db } from '../../services/firebase'; */
+import { getDetail } from '../../services/firebase/firestore';
 
 const ItemDetailContainer = () => {
 	const [ productById, setProductById ] = useState([]);
@@ -18,10 +19,7 @@ const ItemDetailContainer = () => {
 	useEffect(() => {
 		setLoading(true);
 
-		getDoc(doc(db, "productos", id)).then(response => {
-			const product = {id: response.id, ...response.data()}
-			setProductById(product)
-		}).catch(error => {
+		getDetail(setProductById, id).catch(error => {
 			console.log(error)
 		}).finally(() => {
 			setLoading(false)

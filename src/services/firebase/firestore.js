@@ -1,6 +1,6 @@
 //Firestore
 import { db } from ".";
-import { getDocs, collection, addDoc, query, where, documentId, writeBatch} from 'firebase/firestore'
+import { getDocs, collection, addDoc, query, where, documentId, writeBatch, getDoc, doc} from 'firebase/firestore'
 //Sweet Alert
 import swal from 'sweetalert';
 
@@ -54,4 +54,18 @@ export const setOrders = (cart, order) => {
             console.log(error)
             swal('Error',`Algunos productos estan fuera de stock`)
         })
+}
+
+export const getDetail = (setProductById, id) => {
+
+    return new Promise((resolve, reject) => {
+
+        getDoc(doc(db, "productos", id)).then(response => {
+            const product = {id: response.id, ...response.data()}
+            setProductById(product)
+            resolve(product)
+        }).catch(error => {
+            reject(error)
+        })
+})
 }
