@@ -10,7 +10,7 @@ Si el carrito está vacio, te invita al inicio.
 Las librerías usadas son: ReactJs, Create React App, React Router, Sweet Alert y Bootstrap. Usa también Firebase para los productos.
 
 COMPONENTES PRINCIPALES-----------------
-- CarWidget
+- CarWidget 
 - Item
 - ItemCart
 - ItemDetail
