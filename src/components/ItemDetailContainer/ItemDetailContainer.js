@@ -5,9 +5,7 @@ import ItemDetail from '../ItemDetail/ItemDetail';
 import { useParams } from 'react-router-dom';
 //Bootstrap
 import { Spinner } from 'react-bootstrap';
-//Firebase
-/* import { getDoc, doc } from 'firebase/firestore';
-import { db } from '../../services/firebase'; */
+//Funciones
 import { getDetail } from '../../services/firebase/firestore';
 
 const ItemDetailContainer = () => {
