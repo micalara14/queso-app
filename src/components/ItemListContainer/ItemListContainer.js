@@ -8,9 +8,7 @@ import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 //Compopnentes y funciones
 import ItemList from '../ItemList/ItemList';
-//Firebase
-import {getDocs, collection, query, where} from "firebase/firestore"
-import { db } from '../../services/firebase';
+import { getProducts } from '../../services/firebase/firestore';
 
 const ItemListContainer = (props) => {
 	const [ products, setProducts ] = useState([]);
@@ -21,15 +19,8 @@ const ItemListContainer = (props) => {
 		() => {
 			setLoading(true);
 
-			const collectionRef = category
-			? query(collection(db, "productos"), where("category", "==", category))
-			: collection(db, "productos")
-
-			getDocs(collectionRef).then(response => {
-				const products = response.docs.map (doc => {
-					return {id: doc.id, ...doc.data()}
-				})
-				setProducts(products)
+			getProducts(category).then(response => {
+				setProducts(response)
 			}).catch(error => {
 				console.log(error)
 			}).finally(() => {
