@@ -21,7 +21,7 @@ COMPONENTES PRINCIPALES-----------------
 - Navbar
 
 DEMOSTRACION----------------------------
-![alt text](./public/images/gif-demo.gif "Queso app")
+![alt text](./public/images/gif_demo.gif "Queso app")
 
 By: Micaela Lara Mendoza
 
